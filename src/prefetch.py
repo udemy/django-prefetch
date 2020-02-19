@@ -6,7 +6,7 @@ from django.db import models
 from django.db.models import query
 from django.db.models.fields.related_descriptors import ForwardManyToOneDescriptor
 
-__version__ = '1.2.1'
+__version__ = '2.0.0'
 
 logger = getLogger(__name__)
 
@@ -75,13 +75,13 @@ class PrefetchQuerySet(query.QuerySet):
         self.prefetch_definitions = prefetch_definitions
         self._iterable_class = PrefetchIterable
 
-    def _clone(self, **kwargs):
+    def _chain(self, **kwargs):
         return super(PrefetchQuerySet, self). \
-            _clone(_prefetch=self._prefetch,
+            _chain(_prefetch=self._prefetch,
                    prefetch_definitions=self.prefetch_definitions, **kwargs)
 
     def prefetch(self, *names):
-        obj = self._clone()
+        obj = self._chain()
 
         for opt in names:
             if isinstance(opt, PrefetchOption):

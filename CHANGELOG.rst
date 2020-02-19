@@ -2,6 +2,11 @@
 Changelog
 =========
 
+2.0.0 (2020-02-19)
+------------------
+
+* Added support for Django 2.0, dropped support for Django <2.0.
+
 1.2.1 (2018-09-04)
 ------------------
 
