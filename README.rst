@@ -53,9 +53,9 @@ Overview
     :alt: PyPI Package latest release
     :target: https://pypi.python.org/pypi/django-prefetch
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/ionelmc/django-prefetch/v1.2.1.svg
+.. |commits-since| image:: https://img.shields.io/github/commits-since/ionelmc/django-prefetch/v2.0.0.svg
     :alt: Commits since latest release
-    :target: https://github.com/ionelmc/django-prefetch/compare/v1.2.1...master
+    :target: https://github.com/ionelmc/django-prefetch/compare/v2.0.0...master
 
 .. |wheel| image:: https://img.shields.io/pypi/wheel/django-prefetch.svg
     :alt: PyPI Wheel
@@ -108,8 +108,8 @@ Requirements
 ============
 
 :OS: Any
-:Runtime: Python 2.7, 3.3+ or PyPy
-:Packages: Django>=1.9
+:Runtime: Python 2.7, 3.4+ or PyPy
+:Packages: Django>=2.0
 
 Example
 =======
