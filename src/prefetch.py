@@ -76,9 +76,11 @@ class PrefetchQuerySet(query.QuerySet):
         self._iterable_class = PrefetchIterable
 
     def _clone(self, **kwargs):
-        return super(PrefetchQuerySet, self). \
-            _clone(_prefetch=self._prefetch,
-                   prefetch_definitions=self.prefetch_definitions, **kwargs)
+        cloned = super(PrefetchQuerySet, self)._clone()
+        cloned._prefetch = self._prefetch
+        cloned.prefetch_definitions = self.prefetch_definitions
+        cloned.__dict__.update(kwargs)
+        return cloned
 
     def prefetch(self, *names):
         obj = self._clone()
